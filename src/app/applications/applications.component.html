@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Most Popular</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="hovereffect">
+        <a href="#">
+          <img class="img-responsive" src="https://poratalks.info/inc/img/48.jpg" alt="">
+          <div class="overlay">
+            <div class="rotate">
+              <p class="group1">
+                <a href="#">
+                  <i class="fa fa-eye"> Click</i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div *ngFor="let application of applications" class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{application.appName}}</h3>
+    </div>
+    <div class="panel-body">
+
+      <div class="hovereffect">
+        <a href="#">
+          <img class="img-responsive" src="{{application.thumbnailUrl}}" alt="">
+          <div class="overlay">
+            <div class="rotate">
+              <p class="group1">
+                <a href="#">
+                  <i class="fa fa-eye"> Click</i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
