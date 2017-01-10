@@ -32,12 +32,12 @@
     <div class="panel-body">
 
       <div class="hovereffect">
-        <a href="#">
+        <a [routerLink]="['/apps', application.appId]">
           <img class="img-responsive" src="{{application.thumbnailUrl}}" alt="">
           <div class="overlay">
             <div class="rotate">
               <p class="group1">
-                <a href="#">
+                <a [routerLink]="['/apps', application.appId]">
                   <i class="fa fa-eye"> Click</i>
                 </a>
               </p>

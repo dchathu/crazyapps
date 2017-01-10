@@ -1,32 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import {ApplicationsService} from '../applications.service';
+import {IApplication} from './application';
 
 @Component({
-  selector: 'app-applications',
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.css']
 })
 export class ApplicationsComponent implements OnInit {
-  applications;
-  constructor() { }
+  applications:IApplication[];
+  errorMessage:string;
 
-  ngOnInit() {
-    this.applications=[
-      {
-        appName:'App 1',
-        appId:1,
-        thumbnailUrl:'http://poratalks.info/inc/img/44.jpg'
-      },
-      {
-        appName:'App 2',
-        appId:1,
-        thumbnailUrl:'http://poratalks.info/inc/img/45.jpg'
-      },
-      {
-        appName:'App 3',
-        appId:1,
-        thumbnailUrl:'http://poratalks.info/inc/img/19.jpg'
-      }
-    ];
+  constructor(private _applicationsService : ApplicationsService) { }
+
+  ngOnInit():void {
+    this._applicationsService.getApplications().subscribe(applications => this.applications = applications,
+                           error => this.errorMessage = <any>error)
   }
 
 }
