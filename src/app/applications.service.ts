@@ -10,7 +10,7 @@ import { IApplication } from './applications/application';
 
 @Injectable()
 export class ApplicationsService {
-    private _applicationsUrl = 'http://crazyapps-api.azurewebsites.net/api/applications/applications.json';
+    private _applicationsUrl = 'api/applications/applications.json';
 
     constructor(private _http: Http) { }
 
